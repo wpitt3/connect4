@@ -1,0 +1,100 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+.next-player {
+  margin-bottom: 10px;
+  margin-right: 5px;
+  float: left;
+  padding: 11px
+}
+
+.first-player {
+  margin-bottom: 10px;
+  margin-right: 12px;
+  float: left;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  padding: 10px;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+.first-player:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+.restart {
+  margin-bottom: 10px;
+  float: left;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  padding: 11px;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+.restart:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+.red-token {
+  width: 20px;
+  height: 20px;
+  background: #d21404;
+  float: right;
+  border-radius: 10px;
+  margin-top: -1px;
+  margin-left: 3px;
+}
+
+.yellow-token {
+  width: 20px;
+  height: 20px;
+  background: #fce245;
+  float: right;
+  border-radius: 10px;
+  margin-top: -1px;
+  margin-left: 3px;
+}
+
+.grid {
+    width: 100%;
+    float: left;
+}
+
+.column {
+    width: 50px;
+    height: 300px;
+    float: left;
+    margin: 0 auto;
+}
+
+.column:hover {
+    background: #eee;
+    cursor: pointer;
+}
+
+.cell {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #bbb;
+    border-radius: 30px;
+}
+
+.winner {
+    width: 100%;
+    float: left;
+    font-size: 30px;
+    padding: 25px;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}

@@ -21,7 +21,9 @@ class Agent:
         multiplier = 1.0
         for i in range(len(states)-1, -1, -1):
             self.buffer.store(states[i], rewards[i] * multiplier)
+            self.buffer.store(np.flip(states[i], axis=0), rewards[i] * multiplier)
             self.buffer.store(states[i]*-1, rewards[i] * -1 * multiplier)
+            self.buffer.store(np.flip(states[i]*-1, axis=0), rewards[i] * -1 * multiplier)
             multiplier = multiplier * self.gamma
 
     def learn(self):

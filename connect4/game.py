@@ -33,4 +33,3 @@ class Game:
             self.result = self.player_index * -1
 
         self.player_index = self.player_index * -1
-        return self.state(), self.done, self.result

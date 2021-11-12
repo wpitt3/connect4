@@ -30,7 +30,7 @@ func game(w http.ResponseWriter, r *http.Request) {
     result := find4InBoard(board)
     full := result != 0 || boardIsFull(board)
     if (!full) {
-      bestMove = findBestMove(board, 20000)
+      bestMove = findBestMove(board, 100000)
       var boardAfterMove = performMove(copyBoard(board), bestMove, 1)
       result = find4InBoard(boardAfterMove)
       full = result != 0 || boardIsFull(boardAfterMove)

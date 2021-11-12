@@ -17,12 +17,10 @@ def test_perform_action_on_empty():
     game = Game()
     assert 0 == game.board.grid[0][0]
     assert 1 == game.player_index
-    state, done, result = game.perform_action(0)
-    assert game.result == result
-    assert game.done == done
-    assert not result
-    assert not done
-    assert 1 == state[0][0]
+    game.perform_action(0)
+    assert not game.result
+    assert not game.done
+    assert 1 == game.state()[0][0]
     assert -1 == game.player_index
 
 
@@ -32,9 +30,9 @@ def test_perform_action_invalid_move():
         game.perform_action(0)
     assert not game.result
     assert not game.done
-    _, done, result = game.perform_action(0)
-    assert done
-    assert -1 == result
+    game.perform_action(0)
+    assert game.done
+    assert -1 == game.result
 
 
 def test_perform_action_winner_with_4():
@@ -47,9 +45,9 @@ def test_perform_action_winner_with_4():
     game.perform_action(1)
     assert not game.result
     assert not game.done
-    _, done, result = game.perform_action(0)
-    assert done
-    assert 1 == result
+    game.perform_action(0)
+    assert game.done
+    assert 1 == game.result
 
 
 def test_perform_action_full_board():
@@ -68,7 +66,7 @@ def test_perform_action_full_board():
     assert not game.done
     assert not game.board.full_board()
 
-    _, done, result = game.perform_action(6)
-    assert done
-    assert 0 == result
+    game.perform_action(6)
+    assert game.done
+    assert 0 == game.result
     assert game.board.full_board()

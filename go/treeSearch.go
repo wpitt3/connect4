@@ -2,7 +2,7 @@ package main
 
 import (
 	"math"
-	"fmt"
+// 	"fmt"
 )
 
 func findBestMove(board [7][6]int, moves int) int {
@@ -35,13 +35,13 @@ func findBestMove(board [7][6]int, moves int) int {
     bestScore := float32(0.0)
     for i:=0; i<len(rootNode.children); i++ {
         child := rootNode.children[i]
-        fmt.Println(child.numer/child.denom)
+//         fmt.Println(child.numer/child.denom)
         if (child.numer/child.denom) > bestScore {
             bestScore = (child.numer/child.denom)
             bestMove = child.action
         }
     }
-    fmt.Println()
+//     fmt.Println()
     return bestMove
 }
 

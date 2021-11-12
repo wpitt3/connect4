@@ -8,12 +8,15 @@ import tensorflow as tf
 from tensorflow import keras
 import numpy as np
 from monte_carlo_tree_search import Model
+import os
 
 if __name__ == '__main__':
+
     # for i in range(20, 0, -1):
     #     print(i)
     game = Game()
-    game.perform_action(6)
-    print(Model().call(game.state()))
+
     game.perform_action(5)
-    print(Model().call(game.state()))
+    game.perform_action(6)
+    Model(50).call(game.state())
+    Model(50).call(game.state())

@@ -8,6 +8,8 @@ import (
 	"fmt"
 )
 
+// x := 0
+
 //export Connect4MCTS
 func Connect4MCTS(data *C.int, moves C.int) int {
 
@@ -25,7 +27,9 @@ func Connect4MCTS(data *C.int, moves C.int) int {
         }
 	}
 
-    fmt.Printf("board %v\n", board)
+//     fmt.Printf("board %v\n", board)
+//     fmt.Println(x)
+
 
     return findBestMove(board, int(moves))
 }
